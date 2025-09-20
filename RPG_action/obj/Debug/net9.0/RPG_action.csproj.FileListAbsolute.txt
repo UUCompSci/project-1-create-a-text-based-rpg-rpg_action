@@ -1,0 +1,15 @@
+/home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/bin/Debug/net9.0/RPG_action
+/home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/bin/Debug/net9.0/RPG_action.deps.json
+/home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/bin/Debug/net9.0/RPG_action.runtimeconfig.json
+/home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/bin/Debug/net9.0/RPG_action.dll
+/home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/bin/Debug/net9.0/RPG_action.pdb
+/home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/obj/Debug/net9.0/RPG_action.GeneratedMSBuildEditorConfig.editorconfig
+/home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/obj/Debug/net9.0/RPG_action.AssemblyInfoInputs.cache
+/home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/obj/Debug/net9.0/RPG_action.AssemblyInfo.cs
+/home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/obj/Debug/net9.0/RPG_action.csproj.CoreCompileInputs.cache
+/home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/obj/Debug/net9.0/RPG_action.sourcelink.json
+/home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/obj/Debug/net9.0/RPG_action.dll
+/home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/obj/Debug/net9.0/refint/RPG_action.dll
+/home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/obj/Debug/net9.0/RPG_action.pdb
+/home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/obj/Debug/net9.0/RPG_action.genruntimeconfig.cache
+/home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/obj/Debug/net9.0/ref/RPG_action.dll
