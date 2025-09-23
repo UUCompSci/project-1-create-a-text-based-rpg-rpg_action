@@ -13,3 +13,18 @@
 /home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/obj/Debug/net9.0/RPG_action.pdb
 /home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/obj/Debug/net9.0/RPG_action.genruntimeconfig.cache
 /home/levi/project-1-create-a-text-based-rpg-rpg_action/RPG_action/obj/Debug/net9.0/ref/RPG_action.dll
+C:\Users\antía lópez\Documents\code\project-1-create-a-text-based-rpg-rpg_action\RPG_action\bin\Debug\net9.0\RPG_action.exe
+C:\Users\antía lópez\Documents\code\project-1-create-a-text-based-rpg-rpg_action\RPG_action\bin\Debug\net9.0\RPG_action.deps.json
+C:\Users\antía lópez\Documents\code\project-1-create-a-text-based-rpg-rpg_action\RPG_action\bin\Debug\net9.0\RPG_action.runtimeconfig.json
+C:\Users\antía lópez\Documents\code\project-1-create-a-text-based-rpg-rpg_action\RPG_action\bin\Debug\net9.0\RPG_action.dll
+C:\Users\antía lópez\Documents\code\project-1-create-a-text-based-rpg-rpg_action\RPG_action\bin\Debug\net9.0\RPG_action.pdb
+C:\Users\antía lópez\Documents\code\project-1-create-a-text-based-rpg-rpg_action\RPG_action\obj\Debug\net9.0\RPG_action.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\antía lópez\Documents\code\project-1-create-a-text-based-rpg-rpg_action\RPG_action\obj\Debug\net9.0\RPG_action.AssemblyInfoInputs.cache
+C:\Users\antía lópez\Documents\code\project-1-create-a-text-based-rpg-rpg_action\RPG_action\obj\Debug\net9.0\RPG_action.AssemblyInfo.cs
+C:\Users\antía lópez\Documents\code\project-1-create-a-text-based-rpg-rpg_action\RPG_action\obj\Debug\net9.0\RPG_action.csproj.CoreCompileInputs.cache
+C:\Users\antía lópez\Documents\code\project-1-create-a-text-based-rpg-rpg_action\RPG_action\obj\Debug\net9.0\RPG_action.sourcelink.json
+C:\Users\antía lópez\Documents\code\project-1-create-a-text-based-rpg-rpg_action\RPG_action\obj\Debug\net9.0\RPG_action.dll
+C:\Users\antía lópez\Documents\code\project-1-create-a-text-based-rpg-rpg_action\RPG_action\obj\Debug\net9.0\refint\RPG_action.dll
+C:\Users\antía lópez\Documents\code\project-1-create-a-text-based-rpg-rpg_action\RPG_action\obj\Debug\net9.0\RPG_action.pdb
+C:\Users\antía lópez\Documents\code\project-1-create-a-text-based-rpg-rpg_action\RPG_action\obj\Debug\net9.0\RPG_action.genruntimeconfig.cache
+C:\Users\antía lópez\Documents\code\project-1-create-a-text-based-rpg-rpg_action\RPG_action\obj\Debug\net9.0\ref\RPG_action.dll

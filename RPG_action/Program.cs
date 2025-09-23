@@ -1,6 +1,5 @@
 ﻿using static System.Console;
 
-
 // determines if the game is running or not
 bool running = true;
 
@@ -23,7 +22,6 @@ int regions = 1;
 
 
 // player stats and level
-
 int player_level = 1;
 int player_experience = 0;
 int equipment_boost_attack = 0;
@@ -34,7 +32,6 @@ int player_books = 0;
 
 
 // input controls
-
 const ConsoleKey Z = ConsoleKey.Z;
 const ConsoleKey X = ConsoleKey.X;
 const ConsoleKey C = ConsoleKey.C;
@@ -55,7 +52,6 @@ int enemy_attack = 1;
 
 
 // code for leveling up
-
 void levelup()
 {
 
@@ -70,26 +66,18 @@ void levelup()
 }
 
 
-
-
 //battle state
-
 void battle()
 {
     bool inbattle = true;
     while (enemy_health > 0 && player_health > 0 && inbattle == true)
     {
-        Console.WriteLine(@"make your move.
+        Console.WriteLine(@"Make your move:
         
         [Z]: Attack.
         [X]: Defend.
         [C]: Item.
         [V]: Escape.");
-
-
-
-
-
 
         switch (getchoice())
         {
@@ -97,30 +85,30 @@ void battle()
                 enemy_health -= 7 * player_level;
                 if (regions == 4)
                 {
-                    Console.WriteLine($"you attack the dragon head on. you deal {7 * player_level} to the dragon.");
+                    Console.WriteLine($"You attack the dragon head on. You deal {7 * player_level} to the dragon.");
                 }
                 if (regions == 5)
                 {
-                    Console.WriteLine($"you attack the goblin head on. you deal {7 * player_level} to the goblin.");
+                    Console.WriteLine($"You attack the goblin head on. You deal {7 * player_level} to the goblin.");
                 }
                 if (regions == 6)
                 {
-                    Console.WriteLine($"you attack the bandit head on. you deal {7 * player_level} to the bandit.");
+                    Console.WriteLine($"You attack the bandit head on. You deal {7 * player_level} to the bandit.");
                 }
                 if (enemy_health > 0)
                 {
                     player_health -= enemy_attack;
                     if (regions == 4)
                     {
-                        Console.WriteLine($"the dragon spews flames at you. you take {enemy_attack} damage.");
+                        Console.WriteLine($"The dragon spews flames at you. you take {enemy_attack} damage.");
                     }
                     if (regions == 5)
                     {
-                        Console.WriteLine($"the goblin takes a swing at you with his hammer. you take {enemy_attack} damage.");
+                        Console.WriteLine($"The goblin takes a swing at you with his hammer. You take {enemy_attack} damage.");
                     }
                     if (regions == 6)
                     {
-                        Console.WriteLine($"the bandit brandishes his knife and rushes toward you. you take {enemy_attack} damage");
+                        Console.WriteLine($"The bandit brandishes his knife and rushes toward you. You take {enemy_attack} damage");
                     }
                 }
                 break;
@@ -128,22 +116,22 @@ void battle()
                 player_health -= enemy_attack / 2;
                 if (regions == 4)
                 {
-                    Console.WriteLine($"the dragon spews flames at you. you take {enemy_attack / 2} damage.");
+                    Console.WriteLine($"The dragon spews flames at you. You take {enemy_attack / 2} damage.");
                 }
                 if (regions == 5)
                 {
-                    Console.WriteLine($"the goblin takes a swing at you with his hammer. you take {enemy_attack / 2} damage.");
+                    Console.WriteLine($"The goblin takes a swing at you with his hammer. You take {enemy_attack / 2} damage.");
                 }
                 if (regions == 6)
                 {
-                    Console.WriteLine($"the bandit brandishes his knife and rushes toward you. you take {enemy_attack / 2} damage");
+                    Console.WriteLine($"The bandit brandishes his knife and rushes toward you. You take {enemy_attack / 2} damage");
                 }
                 break;
             case C:
-                Console.WriteLine("you don't have any items in this build.");
+                Console.WriteLine("You don't have any items in this build.");
                 break;
             case V:
-                Console.WriteLine("you escape by the skin of your teeth.");
+                Console.WriteLine("You escape by the skin of your teeth.");
                 inbattle = false;
                 regions = 1;
                 break;
@@ -157,19 +145,17 @@ void battle()
 
 
 // enemy encounters
-
-
 void dragon_battle()
 {
     enemy_attack = 18;
     enemy_health = 100;
     experience = 500;
     enemy_gold = 100;
-    Console.WriteLine("a dragon crashes down from above.");
+    Console.WriteLine("A dragon crashes down from above.");
     battle();
     if (enemy_health <= 0)
     {
-        Console.WriteLine("you terminated the dragon!");
+        Console.WriteLine("You terminated the dragon!");
         levelup();
         regions = 1;
     }
@@ -183,11 +169,11 @@ void bandit_battle()
     enemy_health = 40;
     enemy_gold = 300;
     experience = 20;
-    Console.WriteLine("a bandit ambushes you");
+    Console.WriteLine("A bandit ambushes you.");
     battle();
     if (enemy_health <= 0)
     {
-        Console.WriteLine("you aprehended the bandit");
+        Console.WriteLine("You aprehended the bandit.");
         levelup();
         regions = 1;
     }
@@ -199,11 +185,11 @@ void goblin_battle()
     enemy_health = 15;
     enemy_gold = 5;
     experience = 50;
-    Console.WriteLine("a goblin charges you head on.");
+    Console.WriteLine("A goblin charges you head on.");
     battle();
     if (enemy_health <= 0)
     {
-        Console.WriteLine("you drive off the goblin!");
+        Console.WriteLine("You drive off the goblin!");
         levelup();
         regions = 1;
     }
@@ -211,14 +197,12 @@ void goblin_battle()
 
 
 
-
 // checks if the character is alive.
-
 void death_check()
 {
     if (player_health <= 0)
     {
-        Console.WriteLine(@"Annihilated. Do you want to continue?
+        Console.WriteLine(@"You have been annihilated. Do you want to continue?
         
         [Z]: yes
         [X]: no");
@@ -236,23 +220,20 @@ void death_check()
             running = false;
             
         }
-
-        
     }
 }
 
 
 // starting point
-
 void start_point()
 {
     Console.WriteLine(@$"You are at the starting point. What will you do?
 
-    status:
-    level {player_level}
-    health {player_health}
-    zenny {player_currency}
-    books {player_books}
+    STATUS:
+    Level {player_level}
+    Health {player_health}
+    Zenny {player_currency}
+    Books {player_books}
     
     [Z]: go to town.
     [X]: go fight monsters.");
@@ -270,13 +251,10 @@ void start_point()
 }
 
 
-
 // code for the town.
-
-
 void town()
 {
-    Console.WriteLine(@"where do you want to go?
+    Console.WriteLine(@"Where do you want to go?
     
     [Z]: tavern
     [X]: shop
@@ -295,16 +273,10 @@ void town()
     {
         regions = 11;
     }
-
 }
 
 
-
-
-
 // code for the shop
-
-
 void shop()
 {
 
@@ -317,7 +289,7 @@ void shop()
 
     if (getchoice() == Z)
     {
-        Console.WriteLine(@" Shopkeeper: I am currently cleaning the place up. Sorry I can't do buisness at the moment.
+        Console.WriteLine(@"Shopkeeper: I am currently cleaning the place up. Sorry I can't do buisness at the moment.
         Still, feel free to take a look around the place.");
     }
     if (getchoice() == X)
@@ -332,7 +304,7 @@ void shop()
         }
         if (player_books == 2)
         {
-            Console.WriteLine("don't take that book. That's my favorite one. take this one instead.");
+            Console.WriteLine("Don't take that book, that's my favorite one, take this one instead.");
         }
         if (player_books == 3)
         {
@@ -344,7 +316,7 @@ void shop()
         }
         if (player_books == 5)
         {
-            Console.WriteLine("Alright, I've had enough of you. Get out.");
+            Console.WriteLine("Alright, I've had enough of you. Get ou!t.");
             player_health = 1;
             regions = 1;
         }
@@ -359,24 +331,24 @@ void shop()
 
 
 
-
 // Code for the tavern
-
 void tavern()
 {
-    Console.WriteLine(@"there are quite a few people here. Who will you talk to?
+    Console.WriteLine(@"There are quite a few people here. Who will you talk to?
     
     [Z]: a shady guy in a dark corner.
     [X]: a man sleeping on the counter.
     [C]: the bartender.
     [V]: go back to town.");
 
+    Console.WriteLine("");
+
 
     if (getchoice() == Z)
     {
-        Console.WriteLine(@"Mr. Shady: (I swear the kid looked... ) Agh! W-What do you want? you scared the living daylights outa me!
+        Console.WriteLine(@"Mr. Shady: (I swear the kid looked... ) Agh! W-What do you want? You scared the living daylights outa me!
         
-        [Z]: Oh, Sorry I.
+        [Z]: Oh, Sorry I...
         [X]: What's your problem?");
         if (getchoice() == Z)
         {
@@ -393,10 +365,13 @@ void tavern()
     }
     if (getchoice() == X)
     {
+        Console.WriteLine("");
         Console.WriteLine(@"Aloof man: ...
 
         [Z]: So... uh... How's it going?
         [X]: ...");
+
+        Console.WriteLine("");
 
         if (getchoice() == Z)
         {
@@ -409,6 +384,7 @@ void tavern()
             [Z]: You're pretty quiet.
             [X]: ......");
 
+            Console.WriteLine("");
 
             if (getchoice() == Z)
             {
@@ -431,9 +407,7 @@ void tavern()
                 Console.WriteLine("You're a pleasant man to talk to.");
 
             }
-
         }
-
 
 
     }
@@ -444,11 +418,11 @@ void tavern()
             [Z]: try it out
             [X]: I'll pass");
 
+            Console.WriteLine("");
 
         if (getchoice() == Z)
         {
             Console.WriteLine(@"
-            
             
             You take a sip of the drink. It tastes awful.
                 
@@ -466,8 +440,6 @@ void tavern()
             {
                 Console.WriteLine("Bartender: Gyahaha. You're pretty tough kid, my brew is an aquired taste anyways.");
             }
-
-
         }
 
     }
@@ -475,19 +447,19 @@ void tavern()
     {
         regions = 1;
     }
-
 }
 
 
 
 //code for the inn
-
 void inn()
 {
     Console.WriteLine(@"Inkeeper: Hiiii! Do you want to stay for the night? it's only 10 zenny a night. <3
     
     [Z]: Uh... sure. I guess.
     [X]: Um... I'm fine, thanks.");
+
+    Console.WriteLine("");
 
 
     if (getchoice() == Z)
@@ -504,22 +476,17 @@ void inn()
         regions = 1;
         getchoice();
     }
-
 }
-
-
-
-
-
 
 void fight_monsters()
 {
-    Console.WriteLine(@"what do you want to fight?
+    Console.WriteLine(@"What do you want to fight?
 
     [Z]: dragon
     [X]: goblin
     [C]: bandit");
 
+    Console.WriteLine("");
 
     if (getchoice() == Z)
     {
@@ -537,7 +504,6 @@ void fight_monsters()
 
 
 //main function where code runs
-
 while (running)
 {
     Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -581,7 +547,6 @@ while (running)
             death_check();
             break;
     }
-
 }
 
 

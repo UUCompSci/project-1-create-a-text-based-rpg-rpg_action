@@ -1,3 +1,6 @@
 {
-    "dotnet.defaultSolution": "RPG_action.sln"
+    "dotnet.defaultSolution": "RPG_action.sln",
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "main"
+    ]
 }
