@@ -24,10 +24,8 @@ int regions = 1;
 // player stats and level
 int player_level = 1;
 int player_experience = 0;
-int equipment_boost_attack = 0;
 int player_currency = 100;
 int player_health = 10;
-
 int player_books = 0;
 
 
@@ -50,18 +48,15 @@ int enemy_health = 1;
 int enemy_attack = 1;
 
 
-
 // code for leveling up
 void levelup()
 {
-
         player_currency += enemy_gold;
         player_experience += experience;
         while (player_experience >= 100)
         {
             player_level += 1;
             player_experience -= 100;
-
         }   
 }
 
@@ -72,12 +67,16 @@ void battle()
     bool inbattle = true;
     while (enemy_health > 0 && player_health > 0 && inbattle == true)
     {
+        Console.WriteLine("");
         Console.WriteLine(@"Make your move:
         
         [Z]: Attack.
         [X]: Defend.
         [C]: Item.
         [V]: Escape.");
+
+        Console.WriteLine("");
+
 
         switch (getchoice())
         {
@@ -142,8 +141,6 @@ void battle()
 }
 
 
-
-
 // enemy encounters
 void dragon_battle()
 {
@@ -151,6 +148,7 @@ void dragon_battle()
     enemy_health = 100;
     experience = 500;
     enemy_gold = 100;
+
     Console.WriteLine("A dragon crashes down from above.");
     battle();
     if (enemy_health <= 0)
@@ -159,8 +157,6 @@ void dragon_battle()
         levelup();
         regions = 1;
     }
-
-
 }
 
 void bandit_battle()
@@ -207,8 +203,9 @@ void death_check()
         [Z]: yes
         [X]: no");
 
+        Console.WriteLine("");
 
-        if ( getchoice() == Z)
+        if (getchoice() == Z)
         {
             player_currency = player_currency / 2;
             player_health = 1;
@@ -238,7 +235,9 @@ void start_point()
     [Z]: go to town.
     [X]: go fight monsters.");
 
-    if ( getchoice() == Z)
+    Console.WriteLine("");
+
+    if (getchoice() == Z)
     {
         regions = 2;
     }
@@ -260,6 +259,7 @@ void town()
     [X]: shop
     [C]: inn");
 
+    Console.WriteLine("");
 
     if (getchoice() == Z)
     {
@@ -286,6 +286,7 @@ void shop()
     [X]: Take a look at the bookshelf
     [C]: leave.");
 
+    Console.WriteLine("");
 
     if (getchoice() == Z)
     {
@@ -350,6 +351,9 @@ void tavern()
         
         [Z]: Oh, Sorry I...
         [X]: What's your problem?");
+
+        Console.WriteLine("");
+        
         if (getchoice() == Z)
         {
             Console.WriteLine("Well, don't just stare. Beat it kid!");
@@ -430,6 +434,8 @@ void tavern()
                 
                 [Z]: No... It tastes great.
                 [X]: I think that I actually will.");
+
+                Console.WriteLine("");
 
 
             if (getchoice() == X)
