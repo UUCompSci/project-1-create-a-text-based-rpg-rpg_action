@@ -28,6 +28,11 @@ int player_currency = 100;
 int player_health = 10;
 int player_books = 0;
 
+// enemy stats 
+int experience = 1;
+int enemy_gold = 1;
+int enemy_health = 1;
+int enemy_attack = 1;
 
 // input controls
 const ConsoleKey Z = ConsoleKey.Z;
@@ -42,24 +47,119 @@ ConsoleKey getchoice()
 }
 
 
-int experience = 1;
-int enemy_gold = 1;
-int enemy_health = 1;
-int enemy_attack = 1;
-
-
 // code for leveling up
 void levelup()
 {
-        player_currency += enemy_gold;
-        player_experience += experience;
-        while (player_experience >= 100)
-        {
-            player_level += 1;
-            player_experience -= 100;
-        }   
+    player_currency += enemy_gold;
+    player_experience += experience;
+    while (player_experience >= 100)
+    {
+        player_level += 1;
+        player_experience -= 100;
+    }
 }
 
+// starting point
+void start_point()
+{
+    Console.WriteLine(@$"You are at the starting point. What will you do?
+
+    STATUS:
+    Level {player_level}
+    Health {player_health}
+    Zenny {player_currency}
+    Books {player_books}
+    
+    [Z]: go to town.
+    [X]: go fight monsters.");
+
+    Console.WriteLine("");
+
+    if (getchoice() == Z)
+    {
+        regions = 2;
+    }
+    if (getchoice() == X)
+    {
+        regions = 3;
+    }
+}
+
+
+//code for fights
+void fight_monsters()
+{
+    Console.WriteLine(@"What do you want to fight?
+
+    [Z]: dragon
+    [X]: goblin
+    [C]: bandit");
+
+    Console.WriteLine("");
+
+    if (getchoice() == Z)
+    {
+        regions = 4;
+    }
+    if (getchoice() == X)
+    {
+        regions = 5;
+    }
+    if (getchoice() == C)
+    {
+        regions = 6;
+    }
+}
+
+// enemy encounters (dragon, bandit and goblin)
+void dragon_battle()
+{
+    enemy_attack = 18;
+    enemy_health = 100;
+    experience = 500;
+    enemy_gold = 100;
+
+    Console.WriteLine("A dragon crashes down from above.");
+    battle();
+    if (enemy_health <= 0)
+    {
+        Console.WriteLine("You terminated the dragon!");
+        levelup();
+        regions = 1;
+    }
+}
+
+void bandit_battle()
+{
+    enemy_attack = 6;
+    enemy_health = 40;
+    enemy_gold = 300;
+    experience = 20;
+    Console.WriteLine("A bandit ambushes you.");
+    battle();
+    if (enemy_health <= 0)
+    {
+        Console.WriteLine("You aprehended the bandit.");
+        levelup();
+        regions = 1;
+    }
+}
+
+void goblin_battle()
+{
+    enemy_attack = 3;
+    enemy_health = 15;
+    enemy_gold = 5;
+    experience = 50;
+    Console.WriteLine("A goblin charges you head on.");
+    battle();
+    if (enemy_health <= 0)
+    {
+        Console.WriteLine("You drive off the goblin!");
+        levelup();
+        regions = 1;
+    }
+}
 
 //battle state
 void battle()
@@ -141,59 +241,7 @@ void battle()
 }
 
 
-// enemy encounters
-void dragon_battle()
-{
-    enemy_attack = 18;
-    enemy_health = 100;
-    experience = 500;
-    enemy_gold = 100;
-
-    Console.WriteLine("A dragon crashes down from above.");
-    battle();
-    if (enemy_health <= 0)
-    {
-        Console.WriteLine("You terminated the dragon!");
-        levelup();
-        regions = 1;
-    }
-}
-
-void bandit_battle()
-{
-    enemy_attack = 6;
-    enemy_health = 40;
-    enemy_gold = 300;
-    experience = 20;
-    Console.WriteLine("A bandit ambushes you.");
-    battle();
-    if (enemy_health <= 0)
-    {
-        Console.WriteLine("You aprehended the bandit.");
-        levelup();
-        regions = 1;
-    }
-}
-
-void goblin_battle()
-{
-    enemy_attack = 3;
-    enemy_health = 15;
-    enemy_gold = 5;
-    experience = 50;
-    Console.WriteLine("A goblin charges you head on.");
-    battle();
-    if (enemy_health <= 0)
-    {
-        Console.WriteLine("You drive off the goblin!");
-        levelup();
-        regions = 1;
-    }
-}
-
-
-
-// checks if the character is alive.
+// checks if the character is alive
 void death_check()
 {
     if (player_health <= 0)
@@ -221,36 +269,7 @@ void death_check()
 }
 
 
-// starting point
-void start_point()
-{
-    Console.WriteLine(@$"You are at the starting point. What will you do?
-
-    STATUS:
-    Level {player_level}
-    Health {player_health}
-    Zenny {player_currency}
-    Books {player_books}
-    
-    [Z]: go to town.
-    [X]: go fight monsters.");
-
-    Console.WriteLine("");
-
-    if (getchoice() == Z)
-    {
-        regions = 2;
-    }
-    if (getchoice() == X)
-    {
-        regions = 3;
-    }
-
-
-}
-
-
-// code for the town.
+// code for the town
 void town()
 {
     Console.WriteLine(@"Where do you want to go?
@@ -279,12 +298,11 @@ void town()
 // code for the shop
 void shop()
 {
-
     Console.WriteLine(@"
 
     [Z]: Talk to the shop owner
     [X]: Take a look at the bookshelf
-    [C]: leave.");
+    [C]: Leave");
 
     Console.WriteLine("");
 
@@ -327,9 +345,7 @@ void shop()
     {
         regions = 1;
     }
-
 }
-
 
 
 // Code for the tavern
@@ -456,7 +472,6 @@ void tavern()
 }
 
 
-
 //code for the inn
 void inn()
 {
@@ -481,30 +496,6 @@ void inn()
         Console.WriteLine("Inkeeper: Were always open if you change your mind. <3");
         regions = 1;
         getchoice();
-    }
-}
-
-void fight_monsters()
-{
-    Console.WriteLine(@"What do you want to fight?
-
-    [Z]: dragon
-    [X]: goblin
-    [C]: bandit");
-
-    Console.WriteLine("");
-
-    if (getchoice() == Z)
-    {
-        regions = 4;
-    }
-    if (getchoice() == X)
-    {
-        regions = 5;
-    }
-    if (getchoice() == C)
-    {
-        regions = 6;
     }
 }
 
